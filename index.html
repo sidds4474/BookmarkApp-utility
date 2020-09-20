@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+      integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+      crossorigin="anonymous"
+    />
+  <link rel="icon" type="image/png" href="https://www.google.com/s2/favicons?domain=css-tricks.com">
+  <link rel="stylesheet" href="main.css">
+  <script src="script.js" async></script>
+</head>
+<body>
+  <h1 id=open-modal>Add Bookmark</h1>
+  <div class="container" id="bookmark-container">
+    <!-- <div class="item">
+      <i class="fas fa-times" title="Delete Bookmark"></i>
+      <img src=" " alt="" class="favicon">
+      <a href="google.com" class="link">Google</a>
+    </div> -->
+    <!-- <div class="item">
+      <i class="fas fa-times" title="Delete Bookmark"></i>
+      <img src="https://www.google.com/s2/favicons?domain=google.com" alt="" class="favicon">
+      <a href="google.com" class="link">Google</a>
+    </div> -->
+    <!-- <div class="item">
+      <i class="fas fa-times"title="Delete Bookmark"></i>
+      <img src="https://www.google.com/s2/favicons?domain=google.com" alt="" class="favicon">
+      <a href="google.com" class="link">Google</a>
+    </div> -->
+  </div>
+  <div class="modal-container">
+    <div class="modal">
+      <i class="fas fa-times" id=close-modal></i>
+      <div class="modal-header">
+        <h3>Add Bookmark</h3>
+      </div>
+      <div class="modal-content">
+       <form id="form-content">
+         <div class="form-group">
+         <label for="website-name" class="form-label">Website Name</label>
+         <input type="text" class="form-input" id=website-name>
+        </div>
+        <div class="form-group">
+          <label for="website-link " class="form-label">Website Link</label>
+          <input type="text" class="form-input" id=website-link>
+         </div>
+         <button type="submit" id="save-btn">Save</button>
+       </form>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

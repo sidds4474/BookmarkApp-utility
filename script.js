@@ -26,6 +26,7 @@ function showModal1(){
 }
 
 function buildBookmarks(url){
+  container.textContent=''
   bookmarks.forEach((bookmark)=>{
     const{name,url}=bookmark
     const item=document.createElement('div')
@@ -67,7 +68,13 @@ function fetchBookmarks(){
    buildBookmarks()
 }
 function deleteBookmark(url){
-  console.log(url)
+  bookmarks.forEach((bookmark,i)=>{
+    if(bookmark.url==url){
+      bookmarks.splice(i,1)    
+    }
+  })
+  localStorage.setItem('bookmarks',JSON.stringify(bookmarks)) 
+  fetchBookmarks()
 }
 
 function storeValue(e){
@@ -76,6 +83,8 @@ function storeValue(e){
    const websiteName=websitename.value
   if(!websiteUrl.includes('http','https')){
     websiteUrl=`https://${websiteUrl}`
+    console.log(websiteUrl)
+    
     if(validateUrl(websiteUrl,websiteName)){
       const bookmark={
         name:websiteName,
@@ -87,6 +96,25 @@ function storeValue(e){
       fetchBookmarks()
       formcontent.reset()
       websitename.focus()
+      closeModal()
+    }
+    else{
+      closeModal()
+    }
+  }
+  else{
+    if(validateUrl(websiteUrl,websiteName)){
+      const bookmark={
+        name:websiteName,
+        url:websiteUrl
+      }
+      bookmarks.push(bookmark)
+      console.log(bookmarks)
+      localStorage.setItem('bookmarks',JSON.stringify(bookmarks))
+      fetchBookmarks()
+      formcontent.reset()
+      websitename.focus()
+      closeModal()
     }
     else{
       closeModal()
